@@ -13,7 +13,7 @@ function CountryCapitalGame({ data }) {
         const tempOptions = {};
 
         rawOptions.forEach((item) => {
-            tempOptions[item] = '#555555';
+            tempOptions[item] = '#5F5F5F';
         });
 
         setOptions(tempOptions);
@@ -24,7 +24,7 @@ function CountryCapitalGame({ data }) {
 
         if (!firstSelected) {
             Object.keys(tempOptions).forEach(key => {
-                tempOptions[key] = '#555555';
+                tempOptions[key] = '#5F5F5F';
             });
 
             setFirstSelected(x)
@@ -56,24 +56,27 @@ function CountryCapitalGame({ data }) {
     }
 
     return (
-        <div>
-            {
-                Object.keys(options).length === 0
-                    ? 'Congratulations'
-                    : Object.keys(options).map((x, i) =>
-                        <button
-                            key={i}
-                            type="button"
-                            onClick={() => handleClick(x)}
-                            style={{
-                                backgroundColor: options[x],
-                                color: '#ffffff'
-                            }}
-                        >
-                            {x}
-                        </button>
-                    )
-            }
+        <div className="container">
+            <h1>Country Capital Game</h1>
+            <div className="container">
+                {
+                    Object.keys(options).length === 0
+                        ? 'Congratulations'
+                        : Object.keys(options).map((x, i) =>
+                            <button
+                                key={i}
+                                type="button"
+                                onClick={() => handleClick(x)}
+                                style={{
+                                    backgroundColor: options[x],
+                                    color: '#ffffff'
+                                }}
+                            >
+                                {x}
+                            </button>
+                        )
+                }
+            </div>
         </div>
     );
 }

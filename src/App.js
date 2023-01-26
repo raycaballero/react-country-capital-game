@@ -1,12 +1,10 @@
 import './App.css';
-import LoginForm from './components/LoginForm';
 import CountryCapitalGame from './components/CountryCapitalGame';
 
 function App() {
 
     return (
         <div>
-            <LoginForm onSubmit={(username, password) => console.log(username, password)} />
             <CountryCapitalGame data={{
                 'Poland': 'Warsaw',
                 'Germany': 'Berlin',
